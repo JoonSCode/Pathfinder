@@ -22,6 +22,7 @@ class MainViewModel {
     
     private func initCombine() {
         repository.dangerModel.sink(receiveValue: {
+            print($0.count)
             self.dangerDatas.send($0)
         }).store(in: &cancelBag)
         

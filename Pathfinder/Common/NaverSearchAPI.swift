@@ -39,13 +39,10 @@ final class LocationSearchAPI: LocationSearchAPIProtocol {
 
     func getDangerData(coordinates: [CLLocationCoordinate2D], completion: @escaping (DangerLocationModel) -> Void) {
         let url = "http://15.164.164.165:3000/api/v1/mobilities/obstacles_base_map_guide"
-        var pathDatas: [[Double]] = []
         var qs = "["
         coordinates.forEach({
             data in
             qs += "[\(data.latitude),\(data.longitude)],"
-//            let array:Array<Double> = [data.latitude, data.longitude]
-//            pathDatas.append(array)
         })
         qs.removeLast()
         qs += "]"

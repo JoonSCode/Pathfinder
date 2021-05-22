@@ -174,7 +174,6 @@ class MainViewController: UIViewController {
         marker.position = NMGLatLng(lat: coordinate.latitude, lng: coordinate.longitude)
 
         if pathDataViewModel.pointType == "SP" || pathDataViewModel.pointType == "EP" {
-//            marker.iconTintColor = .red
             marker.width = 25
             marker.height = 25
             obstacleMarkers.append(marker)
@@ -256,7 +255,6 @@ extension MainViewController: CLLocationManagerDelegate {
             viewModel.pathDatas.value = []
             destinationPoi = nil
             return
-                // 목적지 도착 했을 때 동작. 추후 alert띄워주면 좋을 것 같다.
         }
         var tmpDanger = false
 

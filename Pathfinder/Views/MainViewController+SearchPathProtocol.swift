@@ -34,11 +34,12 @@ extension MainViewController: SearchResultViewDelegate {
         destinationMarker.width = 25
         destinationMarker.height = 25
         destinationMarker.mapView = naverMapView.mapView
-        
+        obstacleMarkers.append(destinationMarker)
         let startMarker = NMFMarker(position: NMGLatLng(lat: currentLocation.coordinate.latitude, lng: currentLocation.coordinate.longitude))
         startMarker.width = 25
         startMarker.height = 25
         startMarker.mapView = naverMapView.mapView
+        obstacleMarkers.append(startMarker)
         
         startNavigatingButton.isHidden = false
     }
