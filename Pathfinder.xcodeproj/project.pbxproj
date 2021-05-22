@@ -9,14 +9,25 @@
 /* Begin PBXBuildFile section */
 		2756169ACAD923A024EBED6B /* Pods_PathfinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0248E38CE79A96A6B59A47 /* Pods_PathfinderTests.framework */; };
 		4790247D01EE9393AD33D4C4 /* Pods_Pathfinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0D4CE453CD6591CC6E0E97 /* Pods_Pathfinder.framework */; };
+		550FF9D626593DFA00E485A7 /* MainViewController+SearchPathProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FF9D526593DFA00E485A7 /* MainViewController+SearchPathProtocol.swift */; };
+		550FF9DA2659686C00E485A7 /* ResultTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FF9D92659686C00E485A7 /* ResultTableViewModel.swift */; };
+		550FF9DC2659688600E485A7 /* ResultTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FF9DB2659688600E485A7 /* ResultTableViewModel.swift */; };
+		5561F21A26583B390094AA5B /* NaverSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5561F21926583B390094AA5B /* NaverSearchAPI.swift */; };
+		5561F21C265852E20094AA5B /* DangerLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5561F21B265852E20094AA5B /* DangerLocationModel.swift */; };
+		5561F21E265854860094AA5B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5561F21D265854860094AA5B /* Repository.swift */; };
+		5561F220265857230094AA5B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5561F21F265857230094AA5B /* MainViewModel.swift */; };
+		5561F22426585C5C0094AA5B /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5561F22326585C5C0094AA5B /* LocationModel.swift */; };
+		5561F2262658C7570094AA5B /* SearhResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5561F2252658C7570094AA5B /* SearhResultViewController.swift */; };
 		5597518C265820D90005C574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5597518B265820D90005C574 /* AppDelegate.swift */; };
 		5597518E265820D90005C574 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5597518D265820D90005C574 /* SceneDelegate.swift */; };
-		55975190265820D90005C574 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5597518F265820D90005C574 /* ViewController.swift */; };
+		55975190265820D90005C574 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5597518F265820D90005C574 /* MainViewController.swift */; };
 		55975193265820D90005C574 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55975191265820D90005C574 /* Main.storyboard */; };
 		55975195265820DA0005C574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55975194265820DA0005C574 /* Assets.xcassets */; };
 		55975198265820DA0005C574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55975196265820DA0005C574 /* LaunchScreen.storyboard */; };
 		559751A3265820DA0005C574 /* PathfinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559751A2265820DA0005C574 /* PathfinderTests.swift */; };
 		559751AE265820DB0005C574 /* PathfinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559751AD265820DB0005C574 /* PathfinderUITests.swift */; };
+		55A5C0322658E6690075F30C /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5C0312658E6690075F30C /* ResultTableViewCell.swift */; };
+		55A5C0342658F1690075F30C /* PathModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5C0332658F1690075F30C /* PathModel.swift */; };
 		C05FA0C5C322137E8FC1BA3D /* Pods_Pathfinder_PathfinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D79881CA8038292F5A88AE /* Pods_Pathfinder_PathfinderUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,10 +52,19 @@
 		051CAE341ECA3E7A9B8FA277 /* Pods-Pathfinder-PathfinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pathfinder-PathfinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-Pathfinder-PathfinderUITests/Pods-Pathfinder-PathfinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		19D79881CA8038292F5A88AE /* Pods_Pathfinder_PathfinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pathfinder_PathfinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		529ABC26036271F383465234 /* Pods-Pathfinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pathfinder.debug.xcconfig"; path = "Target Support Files/Pods-Pathfinder/Pods-Pathfinder.debug.xcconfig"; sourceTree = "<group>"; };
+		550FF9D526593DFA00E485A7 /* MainViewController+SearchPathProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+SearchPathProtocol.swift"; sourceTree = "<group>"; };
+		550FF9D92659686C00E485A7 /* ResultTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultTableViewModel.swift; path = /Users/yunjunsu/Desktop/IOS/Pathfinder/Pathfinder/ViewModels/ResultTableViewModel.swift; sourceTree = "<absolute>"; };
+		550FF9DB2659688600E485A7 /* ResultTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewModel.swift; sourceTree = "<group>"; };
+		5561F21926583B390094AA5B /* NaverSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSearchAPI.swift; sourceTree = "<group>"; };
+		5561F21B265852E20094AA5B /* DangerLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerLocationModel.swift; sourceTree = "<group>"; };
+		5561F21D265854860094AA5B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		5561F21F265857230094AA5B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		5561F22326585C5C0094AA5B /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		5561F2252658C7570094AA5B /* SearhResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearhResultViewController.swift; sourceTree = "<group>"; };
 		55975188265820D90005C574 /* Pathfinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pathfinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5597518B265820D90005C574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5597518D265820D90005C574 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5597518F265820D90005C574 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5597518F265820D90005C574 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		55975192265820D90005C574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55975194265820DA0005C574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55975197265820DA0005C574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +75,8 @@
 		559751A9265820DA0005C574 /* PathfinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PathfinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		559751AD265820DB0005C574 /* PathfinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathfinderUITests.swift; sourceTree = "<group>"; };
 		559751AF265820DB0005C574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55A5C0312658E6690075F30C /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		55A5C0332658F1690075F30C /* PathModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathModel.swift; sourceTree = "<group>"; };
 		7CDF6A42DC1CF880B69BF1ED /* Pods-PathfinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PathfinderTests.release.xcconfig"; path = "Target Support Files/Pods-PathfinderTests/Pods-PathfinderTests.release.xcconfig"; sourceTree = "<group>"; };
 		8137CB474E8161CE5C6CDD9D /* Pods-PathfinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PathfinderTests.debug.xcconfig"; path = "Target Support Files/Pods-PathfinderTests/Pods-PathfinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		85A15AE7249C9501C273E10C /* Pods-Pathfinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pathfinder.release.xcconfig"; path = "Target Support Files/Pods-Pathfinder/Pods-Pathfinder.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +123,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5561F21526583B090094AA5B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5597518F265820D90005C574 /* MainViewController.swift */,
+				5561F2252658C7570094AA5B /* SearhResultViewController.swift */,
+				55A5C0312658E6690075F30C /* ResultTableViewCell.swift */,
+				550FF9D526593DFA00E485A7 /* MainViewController+SearchPathProtocol.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5561F21626583B0D0094AA5B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				550FF9D92659686C00E485A7 /* ResultTableViewModel.swift */,
+				550FF9DB2659688600E485A7 /* ResultTableViewModel.swift */,
+				5561F21F265857230094AA5B /* MainViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5561F21726583B120094AA5B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5561F21B265852E20094AA5B /* DangerLocationModel.swift */,
+				5561F22326585C5C0094AA5B /* LocationModel.swift */,
+				55A5C0332658F1690075F30C /* PathModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5561F21826583B180094AA5B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5561F21926583B390094AA5B /* NaverSearchAPI.swift */,
+				5561F21D265854860094AA5B /* Repository.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		5597517F265820D90005C574 = {
 			isa = PBXGroup;
 			children = (
@@ -126,9 +188,12 @@
 		5597518A265820D90005C574 /* Pathfinder */ = {
 			isa = PBXGroup;
 			children = (
+				5561F21826583B180094AA5B /* Common */,
+				5561F21726583B120094AA5B /* Models */,
+				5561F21626583B0D0094AA5B /* ViewModels */,
+				5561F21526583B090094AA5B /* Views */,
 				5597518B265820D90005C574 /* AppDelegate.swift */,
 				5597518D265820D90005C574 /* SceneDelegate.swift */,
-				5597518F265820D90005C574 /* ViewController.swift */,
 				55975191265820D90005C574 /* Main.storyboard */,
 				55975194265820DA0005C574 /* Assets.xcassets */,
 				55975196265820DA0005C574 /* LaunchScreen.storyboard */,
@@ -406,9 +471,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55975190265820D90005C574 /* ViewController.swift in Sources */,
+				550FF9DC2659688600E485A7 /* ResultTableViewModel.swift in Sources */,
+				550FF9DA2659686C00E485A7 /* ResultTableViewModel.swift in Sources */,
+				550FF9D626593DFA00E485A7 /* MainViewController+SearchPathProtocol.swift in Sources */,
+				5561F22426585C5C0094AA5B /* LocationModel.swift in Sources */,
+				5561F220265857230094AA5B /* MainViewModel.swift in Sources */,
+				55975190265820D90005C574 /* MainViewController.swift in Sources */,
 				5597518C265820D90005C574 /* AppDelegate.swift in Sources */,
+				55A5C0342658F1690075F30C /* PathModel.swift in Sources */,
 				5597518E265820D90005C574 /* SceneDelegate.swift in Sources */,
+				5561F21C265852E20094AA5B /* DangerLocationModel.swift in Sources */,
+				5561F21A26583B390094AA5B /* NaverSearchAPI.swift in Sources */,
+				5561F21E265854860094AA5B /* Repository.swift in Sources */,
+				55A5C0322658E6690075F30C /* ResultTableViewCell.swift in Sources */,
+				5561F2262658C7570094AA5B /* SearhResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +590,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -569,7 +645,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -586,6 +662,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N7B3VPVQX3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Alamofire\"",
@@ -611,6 +688,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N7B3VPVQX3;
 				INFOPLIST_FILE = Pathfinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

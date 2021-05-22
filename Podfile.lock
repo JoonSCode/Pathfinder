@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (5.4.3)
+  - NMapsMap (3.11.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - NMapsMap
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - NMapsMap
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  NMapsMap: e6dbea85c2c195c7532deb637a5e90fd70f94fed
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+
+PODFILE CHECKSUM: 83adbcb95469be3097d1b44ebc135c668baf76d5
+
+COCOAPODS: 1.10.1
