@@ -34,7 +34,7 @@ class MainViewModel {
             self.pathDatas.send(pathPoints.map {
                 PathDataViewModel(pathData: $0)
             })
-        }).store(in: &cancelBag)        
+        }).store(in: &cancelBag)
     }
     
     func requestDangerData() {
@@ -48,6 +48,10 @@ class MainViewModel {
         
         if coordinates.count == 0 { return }
         repository.getDangerData(coordinates: coordinates)
+    }
+    
+    func requestNearDangerData(currentCoordinate: CLLocationCoordinate2D) {
+        repository.getNearDangerData(currentCoordinate: currentCoordinate)
     }
     
     func searchPlace(place: String, currentLocation: CLLocationCoordinate2D) {

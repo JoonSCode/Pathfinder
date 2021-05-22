@@ -26,9 +26,10 @@ class MainViewController: UIViewController {
     var searchBar: UISearchBar!
     var destinationPoi: Poi?
     var startPoi: Poi?
+    var isInDanger = false
     private var pathOverlay: NMFPath?
-    private var dangerMarkers: [NMFMarker] = []
-    private var obstacleMarkers: [NMFMarker] = []
+    var dangerMarkers: [NMFMarker] = []
+    var obstacleMarkers: [NMFMarker] = []
 
     @IBOutlet var startNavigatingButton: UIButton!
 
@@ -55,7 +56,7 @@ class MainViewController: UIViewController {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         locationManager.startUpdatingLocation()
     }
 
@@ -203,7 +204,7 @@ class MainViewController: UIViewController {
         marker.mapView = naverMapView.mapView
     }
 
-    private func clearOverlay(overlays: [NMFOverlay]) {
+    func clearOverlay(overlays: [NMFOverlay]) {
         overlays.forEach { $0.mapView = nil }
     }
 
@@ -217,6 +218,7 @@ class MainViewController: UIViewController {
         clearOverlay(overlays: dangerMarkers)
         viewModel.dangerDatas.value = []
         viewModel.pathDatas.value = []
+        destinationPoi = nil
     }
 
     @IBAction func startNavigating(_ sender: Any) {
@@ -230,8 +232,18 @@ class MainViewController: UIViewController {
 
 extension MainViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard locations.count >= 0, let destination = destinationPoi else { return }
+        print("11")
+        guard let destination = destinationPoi else {
+            if dangerMarkers.count != 0 {
+                return
+            }
+            clearOverlay(overlays: obstacleMarkers)
+            clearOverlay(overlays: dangerMarkers)
+            viewModel.requestNearDangerData(currentCoordinate: locations[0].coordinate)
+            return
+        }
         let currentLocation = locations[0]
+
         guard !isNavigatingEnd(currentLocation: currentLocation, destination: destination) else {
             clearOverlay(overlays: obstacleMarkers)
             clearOverlay(overlays: dangerMarkers)
@@ -242,24 +254,30 @@ extension MainViewController: CLLocationManagerDelegate {
             present(alert, animated: false, completion: nil)
             viewModel.dangerDatas.value = []
             viewModel.pathDatas.value = []
+            destinationPoi = nil
             return
                 // 목적지 도착 했을 때 동작. 추후 alert띄워주면 좋을 것 같다.
         }
+        var tmpDanger = false
 
-        viewModel.dangerDatas.value.forEach {
-            dangerData in
+        for dangerData in viewModel.dangerDatas.value {
             let target = CLLocation(latitude: Double(dangerData.latitude)!, longitude: Double(dangerData.longitude)!)
             let distance = getDistance(first: currentLocation, second: target)
-            if distance < 5 {
-                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                AudioServicesPlaySystemSound(1015)
-                print("근처 위험")
-                let alert = getAlert()
-                if alert.isBeingPresented { return }
-                self.present(getAlert(), animated: false, completion: nil)
-                viewModel.dangerDatas.value = []
-                return
+            if distance < 15 {
+                tmpDanger = true
+                break
             }
+        }
+
+        isInDanger = tmpDanger
+
+        if isInDanger {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            AudioServicesPlaySystemSound(1015)
+            print("근처 위험")
+            let alert = getAlert()
+            if alert.isBeingPresented { return }
+            present(getAlert(), animated: false, completion: nil)
         }
     }
 

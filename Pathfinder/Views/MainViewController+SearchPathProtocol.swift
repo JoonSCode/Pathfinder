@@ -25,7 +25,21 @@ extension MainViewController: SearchResultViewDelegate {
         searchPathConfirmView.isHidden = false
         startName.text = "현재위치"
         destinationName.text = destinationPoi.name
-
+        
+        clearOverlay(overlays: obstacleMarkers)
+        clearOverlay(overlays: dangerMarkers)
+        naverMapView.mapView.moveCamera(NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: Double(destinationPoi.latitude)!, lng: Double(destinationPoi.longitude)!), zoom: 17)))
+        
+        let destinationMarker = NMFMarker(position: NMGLatLng(lat: Double(destinationPoi.latitude)!, lng: Double(destinationPoi.longitude)!))
+        destinationMarker.width = 25
+        destinationMarker.height = 25
+        destinationMarker.mapView = naverMapView.mapView
+        
+        let startMarker = NMFMarker(position: NMGLatLng(lat: currentLocation.coordinate.latitude, lng: currentLocation.coordinate.longitude))
+        startMarker.width = 25
+        startMarker.height = 25
+        startMarker.mapView = naverMapView.mapView
+        
         startNavigatingButton.isHidden = false
     }
 }

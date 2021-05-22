@@ -14,6 +14,7 @@ protocol LocationSearchAPIProtocol {
     func searchPlace(place: String, currentLocation: CLLocationCoordinate2D, completion: @escaping (LocationModel) -> Void)
     func getDangerData(coordinates: [CLLocationCoordinate2D], completion: @escaping (DangerLocationModel) -> Void)
     func getPath(startPoi: Poi, destinationPoi: Poi, completion: @escaping (PathModel) -> Void)
+    func getNearDangerData(currentCoordinate: CLLocationCoordinate2D, completion: @escaping (DangerLocationModel) -> Void) 
 }
 
 final class LocationSearchAPI: LocationSearchAPIProtocol {
@@ -79,6 +80,23 @@ final class LocationSearchAPI: LocationSearchAPIProtocol {
             switch response.result {
             case let .success(pathModel):
                 completion(pathModel)
+            case let .failure(error):
+                print(error)
+            }
+        }).store(in: &cancelBag)
+    }
+    
+    func getNearDangerData(currentCoordinate: CLLocationCoordinate2D, completion: @escaping (DangerLocationModel) -> Void) {
+        let url = "http://15.164.164.165:3000/api/v1/mobilities/from_my_position"
+        let parameters = ["lat": "\(currentCoordinate.latitude)", "lng": "\(currentCoordinate.longitude)", "ride_type": "bicycle"]
+        
+        let request = AF.request(url, method: .get, parameters: parameters).validate(statusCode: 200 ..< 300)
+        
+        request.publishDecodable(type: DangerLocationModel.self).sink(receiveValue: {
+            response in
+            switch response.result {
+            case let .success(dangerModel):
+                completion(dangerModel)
             case let .failure(error):
                 print(error)
             }

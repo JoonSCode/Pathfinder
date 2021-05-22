@@ -5,9 +5,9 @@
 //  Created by 윤준수 on 2021/05/22.
 //
 
-import Foundation
 import Combine
 import CoreLocation
+import Foundation
 
 class Repository {
     var dangerModel = PassthroughSubject<[DangerLocationData], Never>()
@@ -32,7 +32,14 @@ class Repository {
             dangerModelResponse in
             self.dangerModel.send(dangerModelResponse.response.payload)
         })
-        
+    }
+    
+    
+    func getNearDangerData(currentCoordinate: CLLocationCoordinate2D) {
+        naverSearchAPI.getNearDangerData(currentCoordinate: currentCoordinate, completion: {
+            dangerModelResponse in
+            self.dangerModel.send(dangerModelResponse.response.payload)
+        })
     }
     
     func getPath(startPoi: Poi, destinationPoi: Poi) {
